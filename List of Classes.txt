@@ -1,4 +1,4 @@
-Main
+Game
 VectorFuncs
 InputHandler
 Animation
