@@ -1,7 +1,5 @@
 /*
-*
 *Static class does not require object creation
-*
 */
 
 #ifndef VECTOR_FUNCS_H_
@@ -68,7 +66,8 @@ public:
 	*/
 	static inline float distance(sf::Vector2f v1,sf::Vector2f v2)
 	{
-		return sqrt( (v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y)); 
+		return sqrt( (v1.x - v2.x) * (v1.x - v2.x) + 
+			   (  v1.y - v2.y) * (v1.y - v2.y)); 
 	}
 
 
@@ -78,7 +77,10 @@ public:
 	*/
 	static inline sf::Vector2f rotate(sf::Vector2f v1, float angle)
 	{
-		return sf::Vector2f( (float)(v1.x*cos(angle*PI/180)) - (float)(v1.y*sin(angle*PI/180)) , (float)(v1.y*cos(angle*PI/180)) + (float)(v1.x*sin(angle*PI/180)) );
+		return sf::Vector2f( (float)(v1.x*cos(angle*PI/180)) - 
+				     (float)(v1.y*sin(angle*PI/180)) , 
+		                     (float)(v1.y*cos(angle*PI/180))
+		   		   + (float)(v1.x*sin(angle*PI/180)) );
 	}
 
 	/*
