@@ -1,9 +1,10 @@
 Game
 VectorFuncs
-InputHandler
-Animation
-Player
-ContentLoader
-Menus
-Entity
-Collision
+InputHandler-Dan
+Animation-Steve
+Player-Steve
+ContentLoader-Steve
+Menus-Dan
+Entity-Steve
+Collision-Steve
+ScrollingBG-Dan
