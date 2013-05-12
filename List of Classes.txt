@@ -5,3 +5,5 @@ Animation
 Player
 ContentLoader
 Menus
+Entity
+Collision
