@@ -8,19 +8,20 @@ class Entity
 {
 public:
 	Entity();
-	Entity(sf::Texture eTexture);
+	Entity(sf::Texture& eTexture);
 	~Entity(void);
 
-	void changePos(sf::Vector2f& v);
+	void updatePos();
+	void setPos(float x, float y);
 	sf::Vector2f getPos();
 
-	void changeVelocity(sf::Vector2f& v);
+	void setVelocity(float x, float y);
 	sf::Vector2f getVelocity();
 
 	void update();
 	void draw(sf::RenderWindow& rWindow);
 	
-private:
+protected:
 	sf::Vector2f velocity;
 	sf::Texture eTexture;
 	sf::Sprite sprite;

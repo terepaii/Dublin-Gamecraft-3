@@ -7,7 +7,7 @@
 class Player : public Entity
 {
 public:
-	Player(sf::Texture pTexture);
+	Player(sf::Texture& pTexture);
 	~Player();
 };
 
