@@ -8,7 +8,6 @@ Entity::Entity(sf::Texture& eTexture)
 	:eTexture(eTexture)
 {
 	sprite.setTexture(eTexture);
-	sprite.setPosition(50, 50);
 }
 
 Entity::~Entity()
@@ -43,6 +42,7 @@ void Entity::draw(sf::RenderWindow& rWindow)
 
 void Entity::update()
 {
+	// Example of how the input to move could be done
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		setVelocity(1, 0);	
@@ -51,9 +51,9 @@ void Entity::update()
 	{
 		setVelocity(-1, 0);
 	}
-	//else
-	//{
-	//	setVelocity(0, 0);
-	//}
+	else
+	{
+		setVelocity(0, 0);
+	}
 	updatePos();
 }
