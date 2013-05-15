@@ -3,7 +3,7 @@ VectorFuncs
 InputHandler-Dan
 Animation-Steve
 Player-Steve
-ContentLoader-Steve
+ContentLoader-Steve - may not be needed
 Menus-Dan
 Entity-Steve
 Collision-Steve
