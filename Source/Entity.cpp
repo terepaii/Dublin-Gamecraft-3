@@ -1,5 +1,5 @@
 #include "Entity.h"
-
+#include <iostream>
 Entity::Entity()
 {
 }
@@ -18,6 +18,7 @@ void Entity::updatePos()
 {
 	sf::Vector2f currentPos = sprite.getPosition();
 	sprite.setPosition(currentPos + velocity);
+	bBox.setPosition(getPos());
 }
 
 sf::Vector2f Entity::getPos()
@@ -40,20 +41,25 @@ void Entity::draw(sf::RenderWindow& rWindow)
 	rWindow.draw(sprite);
 }
 
+bool Entity::collision(Entity e)
+{
+	if(r < e.l || l > e.r ||
+	   t > e.b || b < e.t)
+	{
+		return false;
+	}
+	return true;
+}
+
 void Entity::update()
 {
-	// Example of how the input to move could be done
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-		setVelocity(1, 0);	
-	}
-	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		setVelocity(-1, 0);
-	}
-	else
-	{
-		setVelocity(0, 0);
-	}
-	updatePos();
+	updateBBox();
+}
+
+void Entity::updateBBox()
+{
+	b = bBox.getPosition().y + bBox.getSize().y;
+	l = bBox.getPosition().x;
+	r = bBox.getPosition().x + bBox.getSize().x;
+	t = bBox.getPosition().y;
 }
