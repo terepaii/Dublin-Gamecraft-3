@@ -1,5 +1,13 @@
 #include "InputHandler.h"
 
+InputHandler::InputHandler()
+{
+}
+
+InputHandler::~InputHandler()
+{
+}
+
 sf::Vector2i InputHandler::getMousePosition(const sf::RenderWindow& window)
 {
 	return sf::Mouse::getPosition(window);
@@ -14,6 +22,11 @@ sf::Vector2i InputHandler::getLeftJoystickDirection(const int joystickID)
 {
 	return sf::Vector2i(int(sf::Joystick::getAxisPosition(joystickID, sf::Joystick::U)), 
 		int(sf::Joystick::getAxisPosition(joystickID, sf::Joystick::R)));
+}
+
+bool InputHandler::clicked(sf::RenderWindow &window)
+{
+	return sf::Mouse::isButtonPressed(sf::Mouse::Left);
 }
 
 void InputHandler::updatePlayerMovement(Player& player)
@@ -33,3 +46,8 @@ void InputHandler::updatePlayerMovement(Player& player)
 	}
 }
 
+bool InputHandler::backPressed(const int joystickID)
+{
+	return sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) || 
+		sf::Joystick::isButtonPressed(1, sf::Joystick::Y);
+}

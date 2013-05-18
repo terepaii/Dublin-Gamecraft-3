@@ -11,9 +11,10 @@ public:
 	ScreenManager();
 	~ScreenManager();
 
-	void Load();
+	void Load(std::string& filepath);
 	void Update(InputHandler& input);
 	void Draw(sf::RenderWindow& window);
+	std::string selectedAction();
 
 private:
 
@@ -21,8 +22,12 @@ private:
 	sf::Sprite bacgroundSprite;
 	sf::Texture backgroundTexture;
 
-	std::map<sf::Text, sf::Vector2i>::iterator it;
-	std::map<sf::Text, sf::Vector2i> menuItems;
+	sf::Font mainMenuFont;
+	unsigned int fontSize;
+
+	int selectedIndex;
+	std::vector<sf::Text>::iterator it;
+	std::vector<sf::Text> menuItems;
 
 };
 #endif
