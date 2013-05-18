@@ -1,18 +1,22 @@
 direction = sf::Vector2f(sf::Joystick::getAxisPosition(joystickNum, sf::Joystick::U),
-			sf::Joystick::getAxisPosition(joystickNum, sf::Joystick::R));
-					if(std::abs(direction.x) > 30 || std::abs(direction.y) > 30)
-							{
-										player.useAbility(player.getPrimaryAttack(), direction);
-												}
-														if(sf::Joystick::getAxisPosition(joystickNum, sf::Joystick::Z) < -50)
-																{
-																			player.useAbility(player.getSpecialAttack(), direction);
-																					}
-																							if(sf::Joystick::getAxisPosition(joystickNum, sf::Joystick::Z) > 50)
-																									{
-																												player.useAbility(player.getMeleeAttack(), direction);
-																														}
-																																if(sf::Joystick::isButtonPressed(joystickNum, 5))
-																																		{
-																																					player.useAbility(player.getTrapAttack(), direction);
-																																							}
+	sf::Joystick::getAxisPosition(joystickNum, sf::Joystick::R));
+
+if(std::abs(direction.x) > 30 || std::abs(direction.y) > 30)
+{
+	player.useAbility(player.getPrimaryAttack(), direction);
+}
+if(sf::Joystick::getAxisPosition(joystickNum, sf::Joystick::Z) < -50)
+{
+	player.useAbility(player.getSpecialAttack(), direction);
+}
+if(sf::Joystick::getAxisPosition(joystickNum, sf::Joystick::Z) > 50)
+{
+	player.useAbility(player.getMeleeAttack(), direction);
+}
+if(sf::Joystick::isButtonPressed(joystickNum, 5))
+{
+	player.useAbility(player.getTrapAttack(), direction);
+}
+
+
+
